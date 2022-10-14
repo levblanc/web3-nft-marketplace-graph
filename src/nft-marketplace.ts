@@ -31,7 +31,28 @@ export function handleItemBought(event: ItemBoughtEvent): void {
   activeItem!.save();
 }
 
-export function handleItemCanceled(event: ItemCanceledEvent): void {}
+export function handleItemCanceled(event: ItemCanceledEvent): void {
+  const { seller, tokenId, nftAddress } = event.params;
+  const itemId = getIdFromEventParams(tokenId, nftAddress);
+
+  let itemCanceled = ItemCanceled.load(itemId);
+  let activeItem = ActiveItem.load(itemId);
+
+  if (!itemCanceled) {
+    itemCanceled = new ItemCanceled(itemId);
+  }
+
+  itemCanceled.seller = seller;
+  itemCanceled.tokenId = tokenId;
+  itemCanceled.nftAddress = nftAddress;
+  itemCanceled.save();
+
+  // the dead address
+  activeItem!.buyer = Address.fromString(
+    '0x000000000000000000000000000000000000dEaD'
+  );
+  activeItem!.save();
+}
 
 export function handleItemListed(event: ItemListedEvent): void {
   const { seller, tokenId, nftAddress, price } = event.params;
