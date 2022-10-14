@@ -1,285 +1,311 @@
 [
   {
-    "type": "error",
+    "inputs": [],
     "name": "NftMarketplace__NoEarnings",
-    "inputs": []
+    "type": "error"
   },
   {
-    "type": "error",
+    "inputs": [],
     "name": "NftMarketplace__NotApprovedForMarketplace",
-    "inputs": []
+    "type": "error"
   },
   {
-    "type": "error",
+    "inputs": [],
     "name": "NftMarketplace__NotOwner",
-    "inputs": []
+    "type": "error"
   },
   {
-    "type": "error",
+    "inputs": [],
     "name": "NftMarketplace__PriceMustBeAboveZero",
-    "inputs": []
+    "type": "error"
   },
   {
-    "type": "error",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
     "name": "NftMarketplace__PriceNotMet",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "nftAddress"
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId"
-      },
-      {
-        "type": "uint256",
-        "name": "price"
-      }
-    ]
+    "type": "error"
   },
   {
-    "type": "error",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
     "name": "NftMarketplace__TokenAlreadyListed",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "nftAddress"
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId"
-      }
-    ]
+    "type": "error"
   },
   {
-    "type": "error",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
     "name": "NftMarketplace__TokenNotListed",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "nftAddress"
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId"
-      }
-    ]
+    "type": "error"
   },
   {
-    "type": "error",
+    "inputs": [],
     "name": "NftMarketplace__WithdrawFailed",
-    "inputs": []
+    "type": "error"
   },
   {
-    "type": "event",
     "anonymous": false,
-    "name": "ItemBought",
     "inputs": [
       {
-        "type": "address",
+        "indexed": true,
+        "internalType": "address",
         "name": "buyer",
-        "indexed": true
+        "type": "address"
       },
       {
-        "type": "address",
+        "indexed": true,
+        "internalType": "address",
         "name": "nftAddress",
-        "indexed": true
+        "type": "address"
       },
       {
-        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256",
         "name": "tokenId",
-        "indexed": true
+        "type": "uint256"
       },
       {
-        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256",
         "name": "price",
-        "indexed": false
+        "type": "uint256"
       }
-    ]
+    ],
+    "name": "ItemBought",
+    "type": "event"
   },
   {
-    "type": "event",
     "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "seller",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
     "name": "ItemCanceled",
-    "inputs": [
-      {
-        "type": "address",
-        "name": "seller",
-        "indexed": true
-      },
-      {
-        "type": "address",
-        "name": "nftAddress",
-        "indexed": true
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId",
-        "indexed": true
-      }
-    ]
+    "type": "event"
   },
   {
-    "type": "event",
     "anonymous": false,
-    "name": "ItemListed",
     "inputs": [
       {
-        "type": "address",
+        "indexed": true,
+        "internalType": "address",
         "name": "seller",
-        "indexed": true
+        "type": "address"
       },
       {
-        "type": "address",
+        "indexed": true,
+        "internalType": "address",
         "name": "nftAddress",
-        "indexed": true
+        "type": "address"
       },
       {
-        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256",
         "name": "tokenId",
-        "indexed": true
+        "type": "uint256"
       },
       {
-        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256",
         "name": "price",
-        "indexed": false
+        "type": "uint256"
       }
-    ]
+    ],
+    "name": "ItemListed",
+    "type": "event"
   },
   {
-    "type": "function",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
     "name": "buyItem",
-    "constant": false,
+    "outputs": [],
     "stateMutability": "payable",
-    "payable": true,
-    "inputs": [
-      {
-        "type": "address",
-        "name": "nftAddress"
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId"
-      }
-    ],
-    "outputs": []
+    "type": "function"
   },
   {
-    "type": "function",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
     "name": "cancelListing",
-    "constant": false,
-    "payable": false,
-    "inputs": [
-      {
-        "type": "address",
-        "name": "nftAddress"
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId"
-      }
-    ],
-    "outputs": []
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    "type": "function",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "seller",
+        "type": "address"
+      }
+    ],
     "name": "getEarnings",
-    "constant": true,
-    "stateMutability": "view",
-    "payable": false,
-    "inputs": [
-      {
-        "type": "address",
-        "name": "seller"
-      }
-    ],
     "outputs": [
       {
-        "type": "uint256",
-        "name": "earnings"
+        "internalType": "uint256",
+        "name": "earnings",
+        "type": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    "type": "function",
-    "name": "getListingItem",
-    "constant": true,
-    "stateMutability": "view",
-    "payable": false,
     "inputs": [
       {
-        "type": "address",
-        "name": "nftAddress"
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
       },
       {
-        "type": "uint256",
-        "name": "tokenId"
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
       }
     ],
+    "name": "getListingItem",
     "outputs": [
       {
-        "type": "tuple",
         "components": [
           {
-            "type": "uint256",
-            "name": "price"
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
           },
           {
-            "type": "address",
-            "name": "seller"
+            "internalType": "address",
+            "name": "seller",
+            "type": "address"
           }
-        ]
+        ],
+        "internalType": "struct NFTMarketplace.Listing",
+        "name": "",
+        "type": "tuple"
       }
-    ]
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    "type": "function",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
     "name": "listItem",
-    "constant": false,
-    "payable": false,
-    "inputs": [
-      {
-        "type": "address",
-        "name": "nftAddress"
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId"
-      },
-      {
-        "type": "uint256",
-        "name": "price"
-      }
-    ],
-    "outputs": []
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    "type": "function",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "nftAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "newPrice",
+        "type": "uint256"
+      }
+    ],
     "name": "updateListing",
-    "constant": false,
-    "payable": false,
-    "inputs": [
-      {
-        "type": "address",
-        "name": "nftAddress"
-      },
-      {
-        "type": "uint256",
-        "name": "tokenId"
-      },
-      {
-        "type": "uint256",
-        "name": "newPrice"
-      }
-    ],
-    "outputs": []
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    "type": "function",
-    "name": "withdraw",
-    "constant": false,
-    "payable": false,
     "inputs": [],
-    "outputs": []
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
 ]
