@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -6,11 +6,11 @@ dataSources:
     name: NFTMarketplace
     network: goerli
     source:
-      address: "0x33F7c1DB808ffC104AD5CBbBA86C90c9f6983E3F"
+      address: "0x5EfDA5c048341f6183984C91aa04f09696316F51"
       abi: NFTMarketplace
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - ItemBought
@@ -22,7 +22,7 @@ dataSources:
       eventHandlers:
         - event: ItemBought(indexed address,indexed address,indexed uint256,uint256)
           handler: handleItemBought
-        - event: ItemCanceled(indexed address,indexed address,uint256)
+        - event: ItemCanceled(indexed address,indexed address,indexed uint256)
           handler: handleItemCanceled
         - event: ItemListed(indexed address,indexed address,indexed uint256,uint256)
           handler: handleItemListed

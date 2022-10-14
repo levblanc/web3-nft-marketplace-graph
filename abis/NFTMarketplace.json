@@ -42,7 +42,7 @@
     "anonymous": false,
     "name": "ItemBought",
     "inputs": [
-      { "type": "address", "name": "seller", "indexed": true },
+      { "type": "address", "name": "buyer", "indexed": true },
       { "type": "address", "name": "nftAddress", "indexed": true },
       { "type": "uint256", "name": "tokenId", "indexed": true },
       { "type": "uint256", "name": "price", "indexed": false }
@@ -55,7 +55,7 @@
     "inputs": [
       { "type": "address", "name": "seller", "indexed": true },
       { "type": "address", "name": "nftAddress", "indexed": true },
-      { "type": "uint256", "name": "tokenId", "indexed": false }
+      { "type": "uint256", "name": "tokenId", "indexed": true }
     ]
   },
   {
