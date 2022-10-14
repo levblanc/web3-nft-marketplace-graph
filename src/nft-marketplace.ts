@@ -12,7 +12,10 @@ import {
 } from '../generated/schema';
 
 export function handleItemBought(event: ItemBoughtEvent): void {
-  const { buyer, tokenId, nftAddress } = event.params;
+  const buyer = event.params.buyer;
+  const tokenId = event.params.tokenId;
+  const nftAddress = event.params.nftAddress;
+
   const itemId = getIdFromEventParams(tokenId, nftAddress);
 
   let itemBought = ItemBought.load(itemId);
@@ -32,7 +35,10 @@ export function handleItemBought(event: ItemBoughtEvent): void {
 }
 
 export function handleItemCanceled(event: ItemCanceledEvent): void {
-  const { seller, tokenId, nftAddress } = event.params;
+  const seller = event.params.seller;
+  const tokenId = event.params.tokenId;
+  const nftAddress = event.params.nftAddress;
+
   const itemId = getIdFromEventParams(tokenId, nftAddress);
 
   let itemCanceled = ItemCanceled.load(itemId);
@@ -55,7 +61,11 @@ export function handleItemCanceled(event: ItemCanceledEvent): void {
 }
 
 export function handleItemListed(event: ItemListedEvent): void {
-  const { seller, tokenId, nftAddress, price } = event.params;
+  const seller = event.params.seller;
+  const tokenId = event.params.tokenId;
+  const nftAddress = event.params.nftAddress;
+  const price = event.params.price;
+
   const itemId = getIdFromEventParams(tokenId, nftAddress);
 
   let itemListed = ItemListed.load(itemId);
