@@ -99,7 +99,7 @@
     "stateMutability": "view",
     "payable": false,
     "inputs": [{ "type": "address", "name": "seller" }],
-    "outputs": [{ "type": "uint256" }]
+    "outputs": [{ "type": "uint256", "name": "earnings" }]
   },
   {
     "type": "function",
